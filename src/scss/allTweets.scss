@@ -1,0 +1,15 @@
+@import 'common.scss';
+
+.allTweets__list {
+  @include resetList;
+  height: 70vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+}
+
+.allTweets__list::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}

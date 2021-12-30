@@ -1,0 +1,124 @@
+@mixin resetList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@mixin resetMarginPadding {
+  margin: 0;
+  padding: 0;
+}
+@mixin sectionHeader {
+  @include resetMarginPadding;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@mixin flexRow {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+@mixin mainFont {
+  font-family: 'Nunito', Calibri, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+@mixin twitterButton {
+  padding: 5px 15px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 1000px;
+  color: rgba(0,0,0,0.8);
+  transition: 200ms ease-in-out;
+}
+
+$lightBorder: 1px solid rgba(120, 120, 120, 0.2);
+$mainBlue: rgb(29, 155, 240);
+$secondaryBlue: rgb(225, 238, 246);
+$mainPink: rgb(249, 24, 128);
+$secondaryPink: rgb(247, 224, 235);
+
+.header {
+  @include sectionHeader;
+  margin-bottom: 10px;
+}
+
+.tweet {
+  @include flexColumn;
+  align-items: flex-start;
+  padding: 10px;
+  border: $lightBorder;
+  transition: 200ms ease-in-out;
+}
+
+.tweet:hover {
+  background-color: rgba(0,0,0,0.03);
+}
+
+.tweet__date {
+  @include resetMarginPadding;
+  margin-bottom: 5px;
+  font-size: 0.7rem;
+  color: rgba(0,0,0,0.4);
+}
+
+.tweet__text {
+  @include resetMarginPadding;
+  margin-bottom: 5px;
+  letter-spacing: 0.03rem;
+  word-break: break-all;
+}
+
+.tweet__items {
+  @include resetList;
+  @include flexRow;
+  justify-content: flex-start;
+}
+
+.tweet__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.tweet__button {
+  @include resetMarginPadding;
+  padding: 5px;
+  border: none;
+  width: 25px;
+  height: 25px;
+  position: relative;
+
+  border-radius: 1000px;
+  background-color: transparent;
+  background-position: center center;
+  background-size: auto 12px;
+  background-repeat: no-repeat;
+}
+
+.tweet__button--like {
+  background-image: url('../img/heart-regular.svg');
+}
+
+.tweet__button--delete {
+  background-image: url('../img/trash-solid.svg');
+}
+
+.tweet__button--like:hover,
+.tweet__button--unlike {
+  background-image: url('../img/heart-regular--pink.svg');
+}
+
+.tweet__button--delete:hover {
+  background-color: $secondaryBlue;
+  background-image: url('../img/trash-solid--blue.svg');
+}
+
+.tweet__button--like:hover,
+.tweet__button--unlike:hover {
+  background-color: $secondaryPink;
+}

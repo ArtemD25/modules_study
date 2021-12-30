@@ -1,0 +1,20 @@
+@import 'common.scss';
+
+.controls__list {
+  @include resetList;
+}
+
+.controls__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.controls__button {
+  @include twitterButton;
+  border: $lightBorder;
+}
+
+.controls__item:hover .controls__button {
+  border: 1px solid transparent;
+  background-color: $secondaryBlue;
+  color: $mainBlue;
+}

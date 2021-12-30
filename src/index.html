@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="visually-hidden">Twitter</h1>
+	<div class="wrapper">
+    <main class="twitterBody">
+      <section class="controls">
+        <h2 class="visually-hidden">Controls buttons to navigate through twitter</h2>
+        <ul class="controls__list">
+          <li class="controls__item">
+            <button class="controls__button" id="controlsAddTweet" type="button">Add tweet</button>
+          </li>
+          <li class="controls__item">
+            <button class="controls__button hidden" id="controlsMainPage" type="button">Go to main page</button>
+          </li>
+          <li class="controls__item">
+            <button class="controls__button hidden" id="controlsShowLiked" type="button">Show liked tweets</button>
+          </li>
+        </ul>
+      </section>
+      <article class="mainContent">
+        <h2 class="visually-hidden">The part where users can read, create, edit and delete tweets</h2>
+        <section class="allTweets twitterSection" id="allTweets">
+          <h2 class="visually-hidden">Main Twitter page</h2>
+          <p class="allTweets__header header">All my tweets</p>
+          <ul class="allTweets__list" id="allTweets__list"></ul>
+        </section>
+        <section class="newTweet twitterSection hidden" id="newTweet">
+          <h2 class="visually-hidden">Page to create new tweets</h2>
+          <p class="newTweet__header header">Add new tweet</p>
+          <label class="visually-hidden" for="newTweet__text">Input for the text of a new tweet</label>
+          <textarea class="newTweet__text textarea" name="textInput" id="newTweet__text" cols="15" rows="5" maxlength="140"></textarea>
+          <ul class="newTweet__items textarea__items">
+            <li class="newTweet__item textarea__item">
+              <button type="button" class="textarea__button newTweet__button newTweet__button--save" id="newTweet__button--save" title="Save tweet">Save</button>
+            </li>
+            <li class="newTweet__item textarea__item">
+              <button type="button" class="textarea__button newTweet__button newTweet__button--cancel cancel-btn" id="newTweet__button--cancel" title="Cancel adding new tweet">Cancel</button>
+            </li>
+          </ul>
+        </section>
+        <section class="editTweet twitterSection hidden" id="editTweet">
+          <h2 class="visually-hidden">Page to edit tweets</h2>
+          <p class="editTweet__header header">Edit tweet</p>
+          <label class="visually-hidden" for="editTweet__text">Input to edit the existing tweet</label>
+          <textarea class="editTweet__text textarea" name="editTweet" id="editTweet__text" cols="15" rows="5" maxlength="140"></textarea>
+          <ul class="editTweet__items textarea__items">
+            <li class="editTweet__item textarea__item">
+              <button type="button" class="textarea__button editTweet__button editTweet__button--save" id="editTweet__button--save" title="Save tweet">Save</button>
+            </li>
+            <li class="editTweet__item textarea__item">
+              <button type="button" class="textarea__button editTweet__button editTweet__button--cancel cancel-btn" id="editTweet__button--cancel" title="Cancel editing the tweet">Cancel</button>
+            </li>
+          </ul>
+        </section>
+        <section class="likedTweets twitterSection hidden" id="likedTweets">
+          <h2 class="visually-hidden">Page with all liked tweets</h2>
+          <p class="likedTweets__header header">Liked tweets</p>
+          <ul class="allTweets__list" id="likedTweets__list"></ul>
+        </section>
+      </article>
+    </main>
+  </div>
+  <aside class="copyright">Icons provided by font awesome under <a href="https://fontawesome.com/license">this</a> license</aside>
+  <section class="modal"  id="modal">
+    <h2 class="visually-hidden">Modal window for custom alerts</h2>
+    <p class="modal__text"></p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,84 @@
+@import './allTweets.scss';
+@import './editTweet.scss';
+@import './newTweet.scss';
+@import './likedTweets.scss';
+@import './controls.scss';
+@import './copyright.scss';
+@import './modal.scss';
+@import 'common.scss';
+
+:root {
+  @include mainFont;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  @include resetMarginPadding;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+@media (max-width: 700px) {
+  body {
+    min-height: 100vh;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1000px;
+}
+
+.twitterBody {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 1fr;
+  grid-template-rows: 75vh;
+  grid-template-areas: 'controls mainContent empty';
+  padding: 40px 0 0 0;
+}
+
+@media (max-width: 700px) {
+  .twitterBody {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(50vh, auto);
+    grid-template-areas: 'controls' 'mainContent' 'empty';
+    padding: 20px 0 0 0;
+  }
+}
+
+.controls {
+  grid-area: controls;
+}
+
+.mainContent {
+  grid-area: mainContent;
+  width: 400px;
+}
+
+.hidden {
+  display: none;
+}

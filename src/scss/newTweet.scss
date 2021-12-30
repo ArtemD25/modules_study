@@ -1,0 +1,35 @@
+@import 'common.scss';
+
+.textarea {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border: $lightBorder;
+  @include mainFont;
+  outline: none;
+  resize: none;
+}
+
+.textarea__items {
+  @include resetList;
+  @include flexRow;
+}
+
+.textarea__item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.textarea__button {
+  @include twitterButton;
+}
+
+.newTweet__item:hover .newTweet__button--save {
+  background-color: $secondaryBlue;
+  color: $mainBlue;
+}
+
+.newTweet__item:hover .newTweet__button--cancel {
+  background-color: $secondaryPink;
+  color: $mainPink;
+}
+
